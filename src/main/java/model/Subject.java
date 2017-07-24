@@ -6,6 +6,7 @@ import exceptions.IllegalTitleException;
  * Created by nromanen on 7/24/2017.
  */
 public class Subject {
+
     private final String title;
 
     private Subject(String title) {

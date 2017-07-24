@@ -9,7 +9,7 @@ import java.time.LocalDate;
 /**
  * Created by nromanen on 7/24/2017.
  */
-public class Main {
+public class Demo {
 
 
     private static final String FILENAME = "grades.json";
@@ -34,7 +34,7 @@ public class Main {
 
         try {
             gradesService.setGrades(gradesService.readFromFile(FILENAME));
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
