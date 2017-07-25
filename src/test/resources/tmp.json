@@ -1,5 +1,6 @@
 [
   {
+    "id": 0,
     "date": {
       "year": 2017,
       "month": 7,
@@ -8,9 +9,10 @@
     "subject": {
       "title": "Subject1"
     },
-    "grade": 5
+    "mark": 5
   },
   {
+    "id": 0,
     "date": {
       "year": 2017,
       "month": 7,
@@ -19,9 +21,10 @@
     "subject": {
       "title": "Subject2"
     },
-    "grade": 5
+    "mark": 5
   },
   {
+    "id": 0,
     "date": {
       "year": 2017,
       "month": 7,
@@ -30,6 +33,6 @@
     "subject": {
       "title": "Subject3"
     },
-    "grade": 5
+    "mark": 5
   }
 ]

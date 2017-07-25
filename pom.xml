@@ -61,14 +61,16 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.4.4</version>
+<<<<<<< HEAD
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.1.3</version>
+=======
+>>>>>>> origin/master
         </dependency>
-
 
     </dependencies>
 </project>

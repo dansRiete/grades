@@ -8,7 +8,7 @@
     "subject": {
       "title": "Math"
     },
-    "grade": 5
+    "mark": 5
   },
   {
     "date": {
@@ -19,7 +19,7 @@
     "subject": {
       "title": "History"
     },
-    "grade": 3
+    "mark": 3
   },
   {
     "date": {
@@ -30,7 +30,7 @@
     "subject": {
       "title": "Geographic"
     },
-    "grade": 9
+    "mark": 9
   },
   {
     "date": {
@@ -41,7 +41,7 @@
     "subject": {
       "title": "Geographic"
     },
-    "grade": 7
+    "mark": 7
   },
   {
     "date": {
@@ -52,7 +52,7 @@
     "subject": {
       "title": "Math"
     },
-    "grade": 3
+    "mark": 3
   },
   {
     "date": {
@@ -63,7 +63,7 @@
     "subject": {
       "title": "History"
     },
-    "grade": 4
+    "mark": 4
   },
   {
     "date": {
@@ -74,7 +74,7 @@
     "subject": {
       "title": "Geographic"
     },
-    "grade": 3
+    "mark": 3
   },
   {
     "date": {
@@ -85,7 +85,7 @@
     "subject": {
       "title": "Geographic"
     },
-    "grade": 2
+    "mark": 2
   },
   {
     "date": {
@@ -96,6 +96,6 @@
     "subject": {
       "title": "History"
     },
-    "grade": 9
+    "mark": 9
   }
 ]
