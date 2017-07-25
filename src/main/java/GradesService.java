@@ -60,13 +60,13 @@ public class GradesService {
     }
 
     public List<Grade> getGrades(LocalDate date){
-        List<Grade> gradesOnDate = retrieveGradesByDate(date, grades);
+        List<Grade> gradesOnDate = retrieveGradesByDate(date);
         gradesOnDate.sort(Comparator.comparing(o -> o.getSubject().getTitle()));
         return gradesOnDate;
     }
 
     public List<Grade> getGrades(Subject subject, boolean ascendingDate){
-        List<Grade> gradesOnDate = retrieveGradesBySubject(subject, grades);
+        List<Grade> gradesOnDate = retrieveGradesBySubject(subject);
         sortByDate(gradesOnDate, ascendingDate);
         return gradesOnDate;
     }
@@ -77,23 +77,23 @@ public class GradesService {
 
     public double calculateAvgGrade(Subject subject){
         final double[] averageGrade = {0};
-        List<Grade> subjectGrades = retrieveGradesBySubject(subject, grades);
+        List<Grade> subjectGrades = retrieveGradesBySubject(subject);
         subjectGrades.forEach(grade -> averageGrade[0] += grade.getGrade());
         return subjectGrades.size() == 0 ? 0 : averageGrade[0] / subjectGrades.size();
     }
 
     private boolean isAlreadyGraded(Subject subject, LocalDate date){
-        return !retrieveGradesBySubject(subject, retrieveGradesByDate(date, grades)).isEmpty();
+        return !retrieveGradesBySubject(subject).isEmpty();
     }
 
-    private List<Grade> retrieveGradesBySubject(Subject subject, List<Grade> allGrades){
-        return allGrades.stream()
+    private List<Grade> retrieveGradesBySubject(Subject subject){
+        return this.grades.stream()
                 .filter(currentGrade -> currentGrade.getSubject().equals(subject))
                 .collect(Collectors.toList());
     }
 
-    private List<Grade> retrieveGradesByDate(LocalDate date, List<Grade> allGrades){
-        return allGrades.stream()
+    private List<Grade> retrieveGradesByDate(LocalDate date){
+        return this.grades.stream()
                 .filter(currentGrade -> currentGrade.getDate().equals(date))
                 .collect(Collectors.toList());
     }
