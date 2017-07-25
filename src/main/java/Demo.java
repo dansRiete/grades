@@ -1,6 +1,10 @@
 import exceptions.AddingGradeException;
 import exceptions.IllegalTitleException;
+import model.Grade;
 import model.Subject;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import services.MyBatisService;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,6 +31,15 @@ public class Demo {
 //            WITHSPACES = Subject.compose(" ");    //Exception
 //            WITHSPACES = Subject.compose("Geog raphic");    //Exception
         } catch (IllegalTitleException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            SqlSessionFactory sessionFactory = MyBatisService.getSqlSessionFactory();
+            SqlSession sqlSession = sessionFactory.openSession();
+            Grade grade = sqlSession.selectOne("GradeMapper.selectGrade", 1);
+            System.out.println(grade);
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

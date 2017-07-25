@@ -54,7 +54,6 @@ public class GradesServiceTests {
                 "Subject: Geographic, Date: 2017-05-15, Grade: 2, " +
                 "Subject: History, Date: 2017-02-20, Grade: 9]";
 
-//        assertTrue(gradesService.getGrades().size() == 9);
         assertEquals(expectedGradesRepresentation, actualGradesRepresentation);
     }
 

@@ -1,5 +1,6 @@
 package model;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
 /**
@@ -7,19 +8,48 @@ import java.time.LocalDate;
  */
 public class Grade {
 
-    private final LocalDate date;
-    private final Subject subject;
-    private final int grade;
+    private long id;
 
-    public Grade(Subject subject, LocalDate date, int grade) {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
+    }
+
+    public void setMark(int mark) {
+        this.mark = mark;
+    }
+
+    private LocalDate date;
+    private Subject subject;
+    private int mark;
+
+    public Grade(Long id, Timestamp date, Long subject, int mark) {
+        this.id = id;
+//        this.date = LocalDate.ofEpochDay(date.getTime());
+        this.subject = null;
+        this.mark = mark;
+    }
+
+    public Grade(Subject subject, LocalDate date, int mark) {
         this.subject = subject;
         this.date = date;
-        this.grade = grade;
+        this.mark = mark;
     }
 
     @Override
     public String toString() {
-        return "Subject: " + subject + ", Date: " + date + ", Grade: " + grade;
+        return "Subject: " + subject + ", Date: " + date + ", Grade: " + mark;
     }
 
     public Subject getSubject() {
@@ -30,8 +60,8 @@ public class Grade {
         return date;
     }
 
-    public int getGrade() {
-        return grade;
+    public int getMark() {
+        return mark;
     }
 
     @Override
@@ -41,7 +71,7 @@ public class Grade {
 
         Grade grade1 = (Grade) o;
 
-        if (grade != grade1.grade) return false;
+        if (mark != grade1.mark) return false;
         if (date != null ? !date.equals(grade1.date) : grade1.date != null) return false;
         return subject != null ? subject.equals(grade1.subject) : grade1.subject == null;
     }

@@ -78,8 +78,8 @@ public class GradesService {
     public double calculateAvgGrade(Subject subject){
         final double[] averageGrade = {0};
         List<Grade> subjectGrades = retrieveGradesBySubject(subject);
-        subjectGrades.forEach(grade -> averageGrade[0] += grade.getGrade());
-        return subjectGrades.size() == 0 ? 0 : averageGrade[0] / subjectGrades.size();
+        subjectGrades.forEach(grade -> averageGrade[0] += grade.getMark());
+        return subjectGrades.isEmpty() ? 0 : averageGrade[0] / subjectGrades.size();
     }
 
     private boolean isAlreadyGraded(Subject subject, LocalDate date){
