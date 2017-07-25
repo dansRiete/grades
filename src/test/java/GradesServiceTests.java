@@ -63,9 +63,7 @@ public class GradesServiceTests {
         initGrades.add(new Grade(Subject.compose("Subject3"), date, 5));
         gradesService.writeToFile("src\\test\\resources\\tmp.json", initGrades);
         List<Grade> gotGrades = gradesService.readFromFile("src\\test\\resources\\tmp.json");
-        assertEquals(initGrades.get(0), gotGrades.get(0));
-        assertEquals(initGrades.get(1), gotGrades.get(1));
-        assertEquals(initGrades.get(2), gotGrades.get(2));
+        assertEquals(initGrades, gotGrades);
     }
 
     @Test(expected = AddingGradeException.class)
